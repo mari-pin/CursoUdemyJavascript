@@ -1,0 +1,1 @@
+//funciones k se pasan como paramatro a otrs funciones para que una vez finalizadas sus tereas ejecuten la funcion que hemos enviado como parametro.
