@@ -1,0 +1,22 @@
+{
+  "name": "ejerciciocliente-servidor",
+  "version": "1.0.0",
+  "description": "practica cliente - servidor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mari-pin/CursoUdemyJavascript.git"
+  },
+  "author": "maría ibañez rosalen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mari-pin/CursoUdemyJavascript/issues"
+  },
+  "homepage": "https://github.com/mari-pin/CursoUdemyJavascript#readme",
+  "dependencies": {
+    "axios": "^0.25.0"
+  }
+}
