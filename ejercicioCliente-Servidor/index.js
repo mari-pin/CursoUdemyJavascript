@@ -28,10 +28,11 @@ const main = async () => {
         }).map((personaje) => Object.values(personaje).join(','))
         //añade dos saltos de linea 
         .join('\n \n')
-        // creacion promesa y creara un estring con los datos que queremos almacenar    
-        await fs.writeFile(path.join(__dirname, "file.csv"))
-        /* añade la ruta donde estan nuestros datos 
-        console.log(path.join(__dirname,"data.csv")); */
-    console.log(personajes);
+    // creacion promesa y creara un archivo csv con los datos que queremos almacenar    
+    await fs.writeFile(path.join(__dirname, "file.csv"), personajes)
+       
+    /* añade la ruta donde estan nuestros datos 
+    console.log(path.join(__dirname,"data.csv")); */
+    //console.log(personajes);
 }
 main()
