@@ -1,4 +1,6 @@
 const express = require('express');
+// traemos los datos de nuestro mockdata(es nuestra base de datos ficticia)
+const data = require('./MOCK_DATA.json')
 
 const app = express();
 const PORT = 3000;
