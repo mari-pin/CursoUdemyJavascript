@@ -1,5 +1,5 @@
 const express = require('express');
-// traemos los datos de nuestro mockdata(es nuestra base de datos ficticia)
+// traemos los datos de nuestro mockdata(es nuestra base de datos ficticia)y se almacenan en la variable data.
 const data = require('./MOCK_DATA.json')
 
 const app = express();
@@ -9,9 +9,10 @@ const PORT = 3000;
 //response--> respuesta al cliente
 app.get('/',(req, res)=>{
     //responde datos. accedemos al json
+    //estructuramos el objeto json que queremos responder
     res.json({
-        //estructuramos el objeto json que queremos responder
-        message:'hola desde expess'
+        message:"lista de usuarios",
+        body: data
     })
 
 })
