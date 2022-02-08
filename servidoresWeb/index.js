@@ -1,9 +1,12 @@
 const express = require('express');
-// traemos los datos de nuestro mockdata(es nuestra base de datos ficticia)y se almacenan en la variable data.
-const data = require('./MOCK_DATA.json')
 
+const Service = require('./src/service')
 const app = express();
 const PORT = 3000;
+
+//nos permite recibir datos de nuestros clientes
+app.use(express.json())
+
 //le damos la capacidad ewscuchar a nuestro sevidor peticiones tipo get 
 //request-->peticion del cliente
 //response--> respuesta al cliente
@@ -12,10 +15,22 @@ app.get('/',(req, res)=>{
     //estructuramos el objeto json que queremos responder
     res.json({
         message:"lista de usuarios",
-        body: data
+        body: Service.getUsers(),
     })
 
 })
+
+ app.post('/',(req,res)=>{
+    //almacenamos en la variable los datos de la peticion
+    let{body: newUser} = req;
+    let user = Service.createUser(newUser)
+    res.json({
+        message: " Usuario creado",
+        body: user//Service.createUser(newUser)
+    })
+
+
+}) 
 
 app.listen(PORT, ()=>{
     console.log(`servidor escuchando en http://localhost:${PORT}`);
