@@ -10,11 +10,14 @@ app.use(express.json())
 //le damos la capacidad ewscuchar a nuestro sevidor peticiones tipo get 
 //request-->peticion del cliente
 //response--> respuesta al cliente
-app.get('/',(req, res)=>{
+app.get('/:id',(req, res)=>{
+
+    let {params:{id}} = req
+    let user = Service.getUser(id)
     //responde datos. accedemos al json
     //estructuramos el objeto json que queremos responder
     res.json({
-        message:"lista de usuarios",
+        message:`Usuario${id}`,
         body: Service.getUsers(),
     })
 

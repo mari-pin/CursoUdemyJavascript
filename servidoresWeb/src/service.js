@@ -5,6 +5,16 @@ const data = require('./MOCK_DATA.json');
 module.exports = {
     //obtener usuarios
     getUsers: ()=> data,
+
+    //func k recibe el id delusuario
+    getUser:(id) => {
+        //nos ayuda a pasar el id a numero
+        let identificador = Number(id);
+       let user =  data.filter((persona)=> persona.id === identificador)[0];
+       return user;
+    },
+
+
     // crear un nuevo usuario
     createUser: (dataUser)=>{
         let newUser = {

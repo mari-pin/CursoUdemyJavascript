@@ -1,0 +1,23 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "debug": "^4.3.3",
+    "dotenv":"^10.0.0",
+    "excel4node": "^1.7.2",
+    "express": "^4.17.2",
+    "http-errors": "^2.0.0",
+    "mongodb": "^4.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "dev":"nodemon index.js"
+  },
+  "keywords": [],
+  "author": "maria ibañez",
+  "license": "ISC"
+}
