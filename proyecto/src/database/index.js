@@ -5,9 +5,7 @@ const {
 //xa imprimir x la consola 
 const debug = require('debug')('app:module-database')
 //archivo config
-const {
-    Config
-} = require('../config/index')
+const { Config } = require('../config/index')
 
 //no esta conectado, esta null x defecto
 let connection = null
