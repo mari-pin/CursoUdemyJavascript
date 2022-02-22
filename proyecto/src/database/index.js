@@ -1,7 +1,5 @@
 //pquete de mongodb necesitamos el mongoClient deberemos escribir un servidor que nos ayude a conectar con mongoAtlas
-const {
-    MongoClient
-} = require('mongodb')
+const {MongoClient} = require('mongodb')
 //xa imprimir x la consola 
 const debug = require('debug')('app:module-database')
 //archivo config

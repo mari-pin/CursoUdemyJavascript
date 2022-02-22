@@ -12,11 +12,11 @@ const excelGeneretor = (products,name,res)=>{
         }
     })
     let wb = new xl.Workbook()
-    let ws = wb.addworksheet('inventario');
+    let ws = wb.addWorksheet('Inventario');
     /* el primer for no da las filas  */
-    for (let index = 1; i<= products.length; i++) {
+    for (let i = 1; i<= products.length; i++) {
         //y el segundo las columnas con el .length nos dice cuantas propiedades tenemos del producto
-        for (let j = 1; i <=  Object.values(products[0]).length; j++) {
+        for (let j = 1; j <=  Object.values(products[0]).length; j++) {
             //ahora almacenamos los datos 
             let data = Object.values(products[i -1])[j -1]
             if (typeof data === 'string') {
@@ -27,4 +27,7 @@ const excelGeneretor = (products,name,res)=>{
         }
     }
     wb.write(`${name}.xlsx`,res)
+}
+module.exports.ProductsUtils = {
+    excelGeneretor
 }
