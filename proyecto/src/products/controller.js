@@ -1,14 +1,8 @@
 const cresateError = require('http-errors');
 const debug = require('debug')('app:module-products-controller');
-const {
-    ProductsService
-} = require('./servicios');
-const {
-    Response
-} = require('../common/response');
-const {
-    ObjectId
-} = require('mongodb');
+const { ProductsService} = require('./servicios');
+const {Response} = require('../common/response');
+const {ObjectId} = require('mongodb');
 module.exports.ProductsController = {
     // nos devuelve la lista de productos
     getProducts: async (req, res) => {
@@ -47,9 +41,7 @@ module.exports.ProductsController = {
     //creacion de producto
     createProduct: async (req, res) => {
         try {
-            const {
-                body
-            } = req;
+            const {body} = req;
             if (!body || Object.keys(body).length === 0) {
                 Response.error(res, new cresateError.BadRequest())
             } else {
