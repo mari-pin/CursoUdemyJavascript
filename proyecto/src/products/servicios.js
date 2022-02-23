@@ -17,6 +17,23 @@ const create = async (product)=>{
     let result = await collection.insertOne(product)
     return result.insertedId
 }
+
+//update
+const updateProduct = async (product)=> {
+    const collection = await Database(COLLECTION)
+    let result = await product.updateOne(product)
+    return result
+}
+
+
+//delete
+const deleteProduct = async (product)=>{
+    const collection = await Database(COLLECTION)
+    let result = await product.deleteOne(product)
+    return result
+}
+
+
 const generateReport = async(name,res) =>{
     let products = await getAll();
     ProductsUtils.excelGeneretor(products, name, res)

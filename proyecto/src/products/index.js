@@ -10,7 +10,10 @@ module.exports.ProductsAPI = (app)=>{
         .get('/report',ProductsController.generateReport)
         .get('/:id',ProductsController.getProduct)//http:localhost:3000/api/products/23
         .post('/',ProductsController.createProduct)
-        
+        //update
+        .get ('/', ProductsController.updateProduct)//ruta subir producto 
+        //delete
+        .get ('/',ProductsController.deleteProduct)//ruta delete producto
 
 //concadena la ruta '/api/products'con las rutas que le hemos creado arriba get y post
     app.use('/api/products', router)

@@ -1,4 +1,4 @@
-const cresateError = require('http-errors');
+const createError = require('http-errors');
 const debug = require('debug')('app:module-products-controller');
 const { ProductsService} = require('./servicios');
 const {Response} = require('../common/response');
@@ -27,7 +27,7 @@ module.exports.ProductsController = {
             } = req;
             let product = await ProductsService.getById(id)
             if (!product) {
-                Response.error(res, new cresateError.NotFound())
+                Response.error(res, new createError.NotFound())
             }else{
                 Response.success(res, 200, `Producto${id}`, product)
             }
@@ -43,7 +43,7 @@ module.exports.ProductsController = {
         try {
             const {body} = req;
             if (!body || Object.keys(body).length === 0) {
-                Response.error(res, new cresateError.BadRequest())
+                Response.error(res, new createError.BadRequest())
             } else {
                 const insertedId = await ProductsService.create(body)
                 Response.success(res, 201, 'Producto agregado', insertedId)
@@ -56,6 +56,28 @@ module.exports.ProductsController = {
         }
 
     },
+
+    //update 
+    updateProduct:async(req,res)=>{
+        try {
+            
+        } catch (error) {
+            debug(error)
+            Response.error(res)
+        }
+
+    },
+    //delete
+    deleteProduct:async(req,res)=>{
+        try {
+            
+        } catch (error) {
+            debug(error)
+            Response.error(res)
+        }
+
+    },
+    
     generateReport:async(req,res)=>{
         try {
            await ProductsService.generateReport('Inventario', res)
