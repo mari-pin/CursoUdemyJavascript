@@ -4,7 +4,7 @@ const { UsersService} = require('./servicios');
 const {Response} = require('../common/response');
 const {ObjectId} = require('mongodb');
 module.exports.UsersController = {
-    // nos devuelve la lista de productos
+    // nos devuelve la lista de ususarios
     getUsers: async (req, res) => {
         try {
             let users = await UsersService.getAll()
@@ -17,7 +17,7 @@ module.exports.UsersController = {
             Response.error(res)
         }
     },
-    //un producto 
+    //un usuario
     getUser: async (req, res) => {
         try {
             const {
@@ -38,7 +38,7 @@ module.exports.UsersController = {
         }
 
     },
-    //creacion de producto
+    //creacion de usuario
     createUser: async (req, res) => {
         try {
             const {body} = req;
@@ -57,7 +57,7 @@ module.exports.UsersController = {
 
     },
 
-    //update 
+    //update user
     updateUser:async(req,res)=>{
         try {
             
@@ -67,7 +67,7 @@ module.exports.UsersController = {
         }
 
     },
-    //delete
+    //deleteuser
     deleteUser:async(req,res)=>{
         try {
             

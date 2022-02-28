@@ -19,20 +19,34 @@ const create = async (user)=>{
 }
 
 //update
-const updateProduct = async (product)=> {
+const updateUser = async (user)=> {
     const collection = await Database(COLLECTION)
-    let result = await product.updateOne(user)
+    let result = await user.updateOne(user)
     return result
 }
 
-
+//otro modo de resolverlo 
 //delete
-const deleteProduct = async (product)=>{
+  deleteUser: (id) =>{
+    let identificador = Number(id);
+    console.log(identificador)
+    let user = data.filter((person) => person.id === identificador[0]);
+    if (user === undefined) {
+        return("el usuario que intente eliminar no existe")
+    } else {
+        let userAEliminar = data.findIndex((userToDelete) => userToDelete.id === identificador)
+        let datosEliminados = data.find((userToDelete)=>userToDelete.id === identificador)
+        data.splice(userAEliminar, 1)
+        return(`los datos del usuario ${datosEliminados.nombre} con ID ${datosEliminados.id}ha sido eliminado correctamente`)
+    }
+}
+//solucion con el patrón que estaba siguiendo
+/* const deleteUser = async (user)=>{
     const collection = await Database(COLLECTION)
-    let result = await product.deleteOne(user)
+    let result = await user.deleteOne({_id:ObjectId(id)})
     return result
 }
-
+ */
 
 
 module.exports.UsersService = {
